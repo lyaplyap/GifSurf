@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+:root {
+  --grey1: #fff;
+  --grey2: #cbd1dc;
+  --grey3: #cdd9ed;
+  --grey4: #a9a9a9;
+  --blue1: #b8efff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.GifSearch {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.Search {
+  width: 100%;
+  padding: 8px 14px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--grey1);
+  border-top: 1px solid var(--grey3);
+  color: white;
+  font-size: 25px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+input {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  padding: 8px 16px;
+  line-height: 25px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid var(--grey3);
+  background: var(--grey1);
+  transition: border .3s ease;
+}
+
+input::placeholder {
+  color: var(--grey2);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--grey4);
+}
+
+.Card {
+  margin: 6px 0px 6px 2px;
+  border-radius: 4px;
+  max-width: 100%;
+}
+
+.Card:hover {
+  box-shadow: 0px 8px 20px;
+  transition: box-shadow .3s ease;
+}
+
+.GifCatalog {
+  width: 94%;
+  max-width: 700px;
+  padding: 6px 12px;
+  margin: 6px auto;
+  height: 100%;
+  max-height: 300px;
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: var(--grey1);
+  border: 1px solid var(--grey3);
+  border-radius: 4px;
+}
+
+.Grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: dense;
+  gap: 8px;
+}
+
+.Messages {
+  width: 94%;
+  max-width: 800px;
+  padding: 8px 0px;
+  margin: 10px auto 55px auto;
+  min-height: 91vh;
+  border: 1px solid var(--grey3);
+  border-radius: 4px;
+}
+
+.messages-header {
+  text-align: center;
+  font-size: 16px;
+  background-color: var(--grey1);
+  border-bottom: 1px solid var(--grey3);
+  padding: 4px 0px 12px 0px;
+}
+
+.Message {
+  margin: 15px 5px 5px auto;
+  width: 72%;
+  display: flex;
+  justify-content: right;
+  border-radius: 12px;
+}
+
+.message-gif {
+  width: 80%;
+  margin: 0px 12px 0px 0px;
+  border-radius: 4px;
+}
+
+.message-text {
+  margin: 0px 12px 0px 0px;
+  padding: 8px 12px;
+  background-color: var(--blue1);
+  max-width: 600px;
+  word-wrap: break-word;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.message-time {
+  margin: auto 8px 0px 0px;
+  color: var(--grey4);
+  font-size: 12px;
+}
+
+.Loading {
+  display: flex;
+  justify-content: center;
+}
+
+.Loader {
+  width: 40px;
+  height: 40px;
+  margin: 15px 0px 10px 0px;
+  border-radius: 50%;
+  border: 3px solid var(--grey1);
+  border-top: 3px solid var(--grey4);
+  transform: rotate(0deg);
+  animation: loading 500ms ease-in-out infinite;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .Messages {
+    width: 100%;
+    border: 0;
+    min-height: 0;
+  }
+  .messages-header {
+    padding: 0px 0px 12px 0px;
+  }
+  .Message {
+    margin: 10px 4px 4px auto;
+  }
+  .message-text {
+    margin: 0px 10px 0px 0px;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  .message-time {
+    font-size: 10px;
+    margin: auto 6px 0px 0px;
+  }
+  .message-gif {
+    width: 90%;
+    margin: 0px 10px 0px 0px;
+  }
+  .Grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .Card {
+    margin: 4px 0px;
+  }
+}
